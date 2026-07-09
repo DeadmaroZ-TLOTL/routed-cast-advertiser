@@ -1,0 +1,5 @@
+{
+  "name": "Routed Cast Advertiser",
+  "render_readme": true,
+  "domains": ["zeroconf"]
+}

@@ -1,0 +1,47 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Routed Cast Advertiser",
+        "description": "Advertise a routed Google Cast device on this Home Assistant network.",
+        "data": {
+          "name": "Name",
+          "host": "Local proxy IP address",
+          "port": "Cast port",
+          "uuid": "Cast UUID",
+          "model": "Model",
+          "instance": "mDNS instance name",
+          "server": "mDNS host name",
+          "bs": "Cast boot/session value"
+        }
+      }
+    },
+    "error": {
+      "invalid_input": "Check the IP address and UUID."
+    },
+    "abort": {
+      "already_configured": "This Cast UUID is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Routed Cast Advertiser",
+        "description": "Update the advertised Cast mDNS record.",
+        "data": {
+          "name": "Name",
+          "host": "Local proxy IP address",
+          "port": "Cast port",
+          "uuid": "Cast UUID",
+          "model": "Model",
+          "instance": "mDNS instance name",
+          "server": "mDNS host name",
+          "bs": "Cast boot/session value"
+        }
+      }
+    },
+    "error": {
+      "invalid_input": "Check the IP address and UUID."
+    }
+  }
+}

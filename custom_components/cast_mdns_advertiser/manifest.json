@@ -1,0 +1,11 @@
+{
+  "domain": "cast_mdns_advertiser",
+  "name": "Routed Cast Advertiser",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["zeroconf"],
+  "documentation": "https://www.home-assistant.io/integrations/zeroconf/",
+  "iot_class": "local_push",
+  "requirements": [],
+  "version": "0.2.1"
+}

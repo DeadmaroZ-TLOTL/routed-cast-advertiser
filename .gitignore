@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+Thumbs.db
+
+# Local compatibility copy; Home Assistant uses custom_components/<domain>/brand/.
+custom_components/cast_mdns_advertiser/brands/
