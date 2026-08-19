@@ -87,7 +87,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     conf = {**entry.data, **entry.options}
     info = _build_service_info(conf)
 
-    await async_zc.async_register_service(info, allow_name_change=False)
+    # The real Cast device can already be visible on one HA interface while this
+    # routed advertisement is still needed on another. Let zeroconf choose a
+    # unique instance name instead of failing the entire config entry.
+    await async_zc.async_register_service(info, allow_name_change=True)
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = {
         "async_zc": async_zc,
         "info": info,
@@ -96,7 +99,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     entry.async_on_unload(entry.add_update_listener(_async_update_listener))
     _LOGGER.info(
         "Advertising Google Cast service %s at %s:%s",
-        conf[CONF_NAME],
+        info.name,
         conf[CONF_HOST],
         conf[CONF_PORT],
     )

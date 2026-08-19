@@ -11,6 +11,10 @@ This lets clients on the Home Assistant LAN discover a Cast device that is actua
 
 It does not proxy Cast traffic by itself. Your router or firewall still needs to make the Cast device reachable on the advertised IP address and port.
 
+If the real Cast service is already visible on one Home Assistant interface,
+the integration automatically selects a unique mDNS instance name for the
+routed advertisement while retaining the device UUID.
+
 ## Installation
 
 Copy `custom_components/cast_mdns_advertiser` into your Home Assistant `custom_components` directory and restart Home Assistant.
